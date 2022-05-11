@@ -2,7 +2,6 @@ import Link from "next/link";
 import React, { FC, ReactElement, useEffect, useState } from "react";
 import { Menu } from "@headlessui/react";
 import Image from "next/image";
-import { UserActions } from "./UserActions";
 import { useRouter } from "next/router";
 import { MenuIcon } from "@heroicons/react/solid";
 

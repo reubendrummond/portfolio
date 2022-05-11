@@ -11,12 +11,26 @@ export const Typing: FC<TypingProps> = ({ content, className }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
+    const drawNextChar = async (chars: string[]) => {
+      if (chars.length) {
+        setIsBlinking(false);
+        const time = Math.random() * 400 + 100;
+        await new Promise((res) => setTimeout(res, time));
+        setCurrentContent((old) => old.concat(chars[0]));
+
+        drawNextChar(chars.slice(1));
+      } else {
+        await new Promise((res) => setTimeout(res, 700));
+        setIsBlinking(true);
+      }
+    };
+
     new Promise(() => {
       setTimeout(() => {
         drawNextChar(Array.from(content));
       }, 1600);
     });
-  }, []);
+  }, [content]);
 
   useEffect(() => {
     if (!isBlinking) {
@@ -29,20 +43,6 @@ export const Typing: FC<TypingProps> = ({ content, className }) => {
     }, 700);
     return () => clearInterval(blinkingInterval);
   }, [isBlinking]);
-
-  const drawNextChar = async (chars: string[]) => {
-    if (chars.length) {
-      setIsBlinking(false);
-      const time = Math.random() * 400 + 100;
-      await new Promise((res) => setTimeout(res, time));
-      setCurrentContent((old) => old.concat(chars[0]));
-
-      drawNextChar(chars.slice(1));
-    } else {
-      await new Promise((res) => setTimeout(res, 700));
-      setIsBlinking(true);
-    }
-  };
 
   return (
     <div className="flex">

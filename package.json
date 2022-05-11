@@ -1,5 +1,5 @@
 {
-  "name": "next-isr",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,9 +13,9 @@
     "@heroicons/react": "^1.0.6",
     "axios": "^0.26.1",
     "firebase": "^9.6.8",
-    "next": "12.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "next": "^12.1.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
   "devDependencies": {
     "@types/google.maps": "^3.48.5",

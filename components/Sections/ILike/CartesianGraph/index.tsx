@@ -1,4 +1,4 @@
-import React, { createRef, useEffect, useState } from "react";
+import React, { createRef, useCallback, useEffect, useState } from "react";
 import { PlotterSVG, MathFunction, linspace } from "./PlotterSVG";
 
 export const CartesianGraph = ({ className }: { className?: string }) => {
@@ -15,15 +15,18 @@ export const CartesianGraph = ({ className }: { className?: string }) => {
     return { indexes, step };
   };
 
-  const loop = async (
-    times: number[],
-    step: number,
-    updateTangent: (index: number) => void
-  ) => {
-    await go("forward", times, step, updateTangent);
-    await go("back", times, step, updateTangent);
-    loop(times, step, updateTangent);
-  };
+  const loop = useCallback(
+    async (
+      times: number[],
+      step: number,
+      updateTangent: (index: number) => void
+    ) => {
+      await go("forward", times, step, updateTangent);
+      await go("back", times, step, updateTangent);
+      loop(times, step, updateTangent);
+    },
+    []
+  );
 
   const go = async (
     direction: "forward" | "back",
@@ -62,7 +65,7 @@ export const CartesianGraph = ({ className }: { className?: string }) => {
     // for tangent animation
     const { indexes, step } = getIndexes(2000, maxIndex);
     loop(indexes, step, updateTangent);
-  }, []);
+  }, [divRef, loop]);
 
   return (
     <>
