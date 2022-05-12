@@ -43,16 +43,18 @@ export const Typing: FC<TypingProps> = ({ content, className }) => {
 
   return (
     <div className="flex">
-      <p className={className}>{currentContent}</p>
-      <p
-        style={{
-          opacity: isVisible ? "100%" : "0",
-        }}
-        // className={`${isVisible ? "" : "invisible"} ${
-        //   className ? className : ""
-        // }`}
-      >
-        _
+      <p className={className}>
+        {currentContent}
+        <span
+          style={{
+            opacity: isVisible ? "100%" : "0",
+          }}
+          // className={`${isVisible ? "" : "invisible"} ${
+          //   className ? className : ""
+          // }`}
+        >
+          _
+        </span>
       </p>
     </div>
   );
