@@ -25,10 +25,14 @@ jobs:
         run: npm ci
       - name: Run build
         run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /portfolio
       - name: Run linting
         run: npm run lint
       - name: Run export
-        run: npm run export
+        run: |
+          npm run export
+          touch ./out/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
