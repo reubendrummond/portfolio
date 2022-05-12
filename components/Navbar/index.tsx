@@ -71,9 +71,7 @@ const Navbar: FC = (): ReactElement => {
             return (
               <Link href={href} key={index} passHref>
                 <p
-                  className={`font-bold hover:opacity-50 hover:cursor-pointer ${
-                    active && "opacity-50"
-                  }`}
+                  className={`font-bold hover:opacity-50 hover:cursor-pointer`}
                 >
                   {name}
                 </p>
@@ -98,9 +96,7 @@ const Navbar: FC = (): ReactElement => {
                     <Menu.Item key={index}>
                       <Link href={href} passHref>
                         <p
-                          className={`font-bold hover:opacity-50 hover:cursor-pointer ${
-                            active && "opacity-50"
-                          }`}
+                          className={`font-bold hover:opacity-50 hover:cursor-pointer`}
                         >
                           {name}
                         </p>

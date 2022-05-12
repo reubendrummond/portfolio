@@ -24,12 +24,9 @@ export const Typing: FC<TypingProps> = ({ content, className }) => {
         setIsBlinking(true);
       }
     };
+    console.log("print");
 
-    new Promise(() => {
-      setTimeout(() => {
-        drawNextChar(Array.from(content));
-      }, 1600);
-    });
+    setTimeout(() => drawNextChar(Array.from(content)), 1600);
   }, [content]);
 
   useEffect(() => {
@@ -48,9 +45,12 @@ export const Typing: FC<TypingProps> = ({ content, className }) => {
     <div className="flex">
       <p className={className}>{currentContent}</p>
       <p
-        className={`${isVisible ? "" : "invisible"} ${
-          className ? className : ""
-        }`}
+        style={{
+          opacity: isVisible ? "100%" : "0",
+        }}
+        // className={`${isVisible ? "" : "invisible"} ${
+        //   className ? className : ""
+        // }`}
       >
         _
       </p>

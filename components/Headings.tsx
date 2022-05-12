@@ -1,5 +1,3 @@
-// export main heading elements
-
 type HeadingProps = {
   children: React.ReactNode;
 };

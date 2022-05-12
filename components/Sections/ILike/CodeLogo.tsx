@@ -12,7 +12,7 @@ export const CodeLogo = ({ className }: CodoLogoProps) => {
       width="200px"
       preserveAspectRatio="xMidYMid meet"
       viewBox="0 0 271 211"
-      className={`group overflow-visible ${className}`}
+      // className={`group overflow-visible ${className}`}
     >
       <g fill="url(#paint0_linear_73_255)">
         <path

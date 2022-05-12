@@ -6,19 +6,24 @@ import { CodeLogo } from "./CodeLogo";
 import { Typing } from "./Typing";
 
 export const ILike = (props: SectionProps) => {
-  const sizes = {
-    sm: 250,
-    md: 300,
-    lg: 400,
-  };
-  const sizesClass = `w-[${sizes.sm}px] md:w-[${sizes.md}px] lg:w-[${sizes.lg}px]`;
+  // const sizes = {
+  //   sm: 250,
+  //   md: 300,
+  //   lg: 400,
+  // };
+  // this causes an error I believe
+  // const sizesClass = `w-[${sizes.sm}px] md:w-[${sizes.md}px] lg:w-[${sizes.lg}px]`;
+  const sizesClass = "w-[250px] md:w-[300px] lg:w-[400px]";
+
+  React.useEffect(() => {
+    console.log("I like section mounted");
+  });
 
   return (
     <section
       id={props.id}
       className="w-full h-screen p-8 md:pt-16 flex flex-col gap-y-12 md:gap-y-24 items-center "
     >
-      {/* <hi className="text-center">I like</h1> */}
       <HighlightedHeading>I like</HighlightedHeading>
       <div className="flex flex-col md:flex-row gap-y-16 items-center w-fit md:gap-x-16 lg:gap-x-32">
         <div className="flex flex-col gap-y-4">
