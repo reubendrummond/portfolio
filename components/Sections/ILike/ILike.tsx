@@ -2,6 +2,7 @@ import { HighlightedHeading } from "@components/Headings";
 import React, { StrictMode } from "react";
 import { SectionProps } from "../SectionTypes";
 import { CartesianGraph } from "./CartesianGraph";
+import { TestGraph } from "./CartesianGraph/testfcn";
 import { CodeLogo } from "./CodeLogo";
 import { Typing } from "./Typing";
 
@@ -14,10 +15,6 @@ export const ILike = (props: SectionProps) => {
   // this causes an error I believe
   // const sizesClass = `w-[${sizes.sm}px] md:w-[${sizes.md}px] lg:w-[${sizes.lg}px]`;
   const sizesClass = "w-[250px] md:w-[300px] lg:w-[400px]";
-
-  React.useEffect(() => {
-    console.log("I like section mounted");
-  });
 
   return (
     <section
@@ -35,6 +32,7 @@ export const ILike = (props: SectionProps) => {
         <div className="flex flex-col gap-y-4">
           <h2 className="text-center">Math</h2>
           <CartesianGraph className={sizesClass} />
+          <TestGraph className={sizesClass} />
         </div>
       </div>
     </section>

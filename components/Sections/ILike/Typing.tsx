@@ -24,7 +24,6 @@ export const Typing: FC<TypingProps> = ({ content, className }) => {
         setIsBlinking(true);
       }
     };
-    console.log("print");
 
     setTimeout(() => drawNextChar(Array.from(content)), 1600);
   }, [content]);

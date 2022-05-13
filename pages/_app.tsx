@@ -9,7 +9,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
       <Head>
         <link
           rel="shortcut icon"
-          href={process.env.NEXT_PUBLIC_BASE_PATH + "/favicon.ico"}
+          href={process.env.NEXT_PUBLIC_BASE_PATH || "" + "/favicon.ico"}
         />
       </Head>
       <Component {...pageProps} />
