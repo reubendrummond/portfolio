@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Bounds, CartesianCanvas, MathFunction } from "./FunctionPlotter";
 
-export const TestGraph = ({ className }: { className: string }) => {
+export const GraphAnimation = ({ className }: { className: string }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {

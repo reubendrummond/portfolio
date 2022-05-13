@@ -1,8 +1,7 @@
 import { HighlightedHeading } from "@components/Headings";
-import React, { StrictMode } from "react";
+import React from "react";
 import { SectionProps } from "../SectionTypes";
-import { CartesianGraph } from "./CartesianGraph";
-import { TestGraph } from "./CartesianGraph/testfcn";
+import { GraphAnimation } from "./CartesianGraph/GraphAnimation";
 import { CodeLogo } from "./CodeLogo";
 import { Typing } from "./Typing";
 
@@ -14,25 +13,25 @@ export const ILike = (props: SectionProps) => {
   // };
   // this causes an error I believe
   // const sizesClass = `w-[${sizes.sm}px] md:w-[${sizes.md}px] lg:w-[${sizes.lg}px]`;
-  const sizesClass = "w-[250px] md:w-[300px] lg:w-[400px]";
+  const sizesClass = "w-[250px] md:w-[280px] lg:w-[350px] xl:w-[350px]";
 
   return (
     <section
       id={props.id}
-      className="w-full h-screen p-8 md:pt-16 flex flex-col gap-y-12 md:gap-y-24 items-center "
+      className="w-full h-screen px-8 py-12 md:pt-16 flex flex-col gap-y-12 md:gap-y-0 items-center "
     >
-      <HighlightedHeading>I like</HighlightedHeading>
-      <div className="flex flex-col md:flex-row gap-y-16 items-center w-fit md:gap-x-16 lg:gap-x-32">
+      <HighlightedHeading>I like...</HighlightedHeading>
+      <div className="flex flex-col h-full md:flex-row items-center w-fit justify-around md:gap-x-16 lg:gap-x-32">
         <div className="flex flex-col gap-y-4">
-          <div className="flex justify-center">
-            <Typing content="software" className="font-mono text-xl" />
+          <div className="flex flex-col justify-center items-center gap-y-1">
+            <Typing content="software" className="font-mono text-2xl md:3xl" />
+            <p>Frontend and backend web dev.</p>
           </div>
           <CodeLogo className={sizesClass} />
         </div>
         <div className="flex flex-col gap-y-4">
           <h2 className="text-center">Math</h2>
-          <CartesianGraph className={sizesClass} />
-          <TestGraph className={sizesClass} />
+          <GraphAnimation className={sizesClass} />
         </div>
       </div>
     </section>

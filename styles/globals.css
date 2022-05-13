@@ -16,6 +16,8 @@ a {
 
 * {
   box-sizing: border-box;
+  --color-primary: #AC57F2;
+  --color-secondary: #C7D2FE;
 }
 
 @layer base {
@@ -28,7 +30,7 @@ a {
   }
 
   h1, h2, h3 {
-    @apply text-slate-600 dark:text-slate-400
+    @apply text-slate-600;
   }
 
   h1 {
@@ -44,7 +46,7 @@ a {
   }
   
   p, a {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
 }
@@ -63,5 +65,15 @@ a {
   }
   .btn-secondary {
     @apply btn-standard;
+  }
+}
+
+@layer utilities {
+  .primary-color {
+    @apply text-[#AC57F2];
+  }
+
+  .bg-secondary-color {
+    @apply bg-[#C7D2FE];
   }
 }
