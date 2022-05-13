@@ -77,6 +77,7 @@ export class TangentAnimator {
   fcn: MathFunction;
   duration: number;
   easingFunction: typeof Easing.Cubic;
+  FPS = 60;
 
   constructor(
     fcn: MathFunction,
@@ -88,8 +89,8 @@ export class TangentAnimator {
     this.easingFunction = easingFunction;
   }
 
-  _getXs(x1: number, x2: number) {
-    const { xs, delta } = linspace(0, 1);
+  _getXs(x1: number, x2: number, noPoints: number) {
+    const { xs, delta } = linspace(0, 1, noPoints);
     const xTangents = xs
       .map((x) => this.easingFunction(x))
       .map((x) => map(x, 0, 1, x1, x2));
@@ -120,7 +121,9 @@ export class TangentAnimator {
   }
 
   getTangentCoordinates(x1: number, x2: number, tangentLength: number = 3) {
-    const { xTangents } = this._getXs(x1, x2);
+    const noPoints = (this.duration / 1000) * this.FPS;
+
+    const { xTangents } = this._getXs(x1, x2, noPoints);
     return xTangents.map((x) => {
       const gradAv = this._getGrad(x);
       const y = this.fcn(x);
@@ -228,7 +231,7 @@ export class CartesianCanvas {
     this.ctx?.stroke();
   }
 
-  plotAxis(options: DrawOptions = {}) {
+  plotMajorAxis(options: DrawOptions = {}) {
     this._applyDrawOptions(options);
     const vertical = [
       {
@@ -256,7 +259,43 @@ export class CartesianCanvas {
     return () => plotPoints.forEach((l) => this._plotLine(l, options));
   }
 
-  plotMajorAxis() {}
+  plotMinorAxis(options: DrawOptions) {
+    let xPoints: number[] = [];
+    const xMultiple = this.axisFreq.minor;
+    const yMultiple = this.axisFreq.minor;
+
+    for (let x = xMultiple; x < this.bounds.x2; x += xMultiple) {
+      xPoints.push(x);
+    }
+    for (let x = -xMultiple; x > this.bounds.x1; x -= xMultiple) {
+      xPoints.push(x);
+    }
+    xPoints.sort((a, b) => a - b);
+
+    let yPoints: number[] = [];
+    for (let y = yMultiple; y < this.bounds.y2; y += yMultiple) {
+      yPoints.push(y);
+    }
+    for (let y = -yMultiple; y > this.bounds.y1; y -= yMultiple) {
+      yPoints.push(y);
+    }
+    yPoints.sort((a, b) => a - b);
+
+    const horizontalMinorAxisPoints = yPoints.map((y) => [
+      { x: this.bounds.x1, y },
+      { x: this.bounds.x2, y },
+    ]);
+    const verticalMinorAxisPoints = xPoints.map((x) => [
+      { x, y: this.bounds.y1 },
+      { x, y: this.bounds.y2 },
+    ]);
+
+    const lines = [...horizontalMinorAxisPoints, ...verticalMinorAxisPoints];
+
+    const plotLines = lines.map((l) => this._mapPoints(l));
+
+    return () => plotLines.forEach((l) => this._plotLine(l, options));
+  }
 
   plotFunction(fcn: MathFunction, options: DrawOptions = {}) {
     const mathFunct = new FunctionPlotter(this.bounds, fcn);
@@ -288,8 +327,12 @@ export class CartesianCanvas {
     };
   }
 
-  draw() {
+  private _resetCanvas() {
     this.ctx?.clearRect(0, 0, this.canvasRef.width, this.canvasRef.height);
+  }
+
+  draw() {
+    this._resetCanvas();
     this.plotFunctions.forEach((p) => p());
   }
 }

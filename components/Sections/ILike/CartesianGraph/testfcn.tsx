@@ -1,11 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import {
-  Bounds,
-  CartesianCanvas,
-  FunctionPlotter,
-  MathFunction,
-  TangentAnimator,
-} from "./FunctionPlotter";
+import { Bounds, CartesianCanvas, MathFunction } from "./FunctionPlotter";
 
 export const TestGraph = ({ className }: { className: string }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -22,9 +16,15 @@ export const TestGraph = ({ className }: { className: string }) => {
     };
     const cc = new CartesianCanvas(canvasRef.current, bounds, 200);
     cc.plotFunctions.push(
-      cc.plotAxis({
+      cc.plotMajorAxis({
         lineWidth: 2,
         strokeStyle: "black",
+      })
+    );
+    cc.plotFunctions.push(
+      cc.plotMinorAxis({
+        lineWidth: 1,
+        strokeStyle: "grey",
       })
     );
     cc.plotFunctions.push(
@@ -35,13 +35,18 @@ export const TestGraph = ({ className }: { className: string }) => {
       })
     );
     cc.plotFunctions.push(
-      cc.plotFunctionTangents(-1.2, 1.2, 3000, 1.7, fcn, {})
+      cc.plotFunctionTangents(-1.1, 1.1, 2500, 1.5, fcn, {
+        lineWidth: 4,
+        strokeStyle: "#818CF8",
+      })
     );
 
-    requestAnimationFrame(function loop() {
+    const animationFrameId = requestAnimationFrame(function loop() {
       cc.draw();
       requestAnimationFrame(loop);
     });
+
+    return () => cancelAnimationFrame(animationFrameId);
   }, [canvasRef]);
 
   return <canvas ref={canvasRef} className={className}></canvas>;
