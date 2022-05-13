@@ -7,6 +7,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
+        <title>Portfolio</title>
         <link
           rel="shortcut icon"
           href={process.env.NEXT_PUBLIC_BASE_PATH || "" + "/favicon.ico"}
