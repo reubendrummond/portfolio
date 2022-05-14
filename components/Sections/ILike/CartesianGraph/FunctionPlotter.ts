@@ -6,12 +6,16 @@ export interface Bounds {
 }
 
 export type MathFunction = (x: number) => number;
-interface Point {
+export interface Point {
   y: number;
   x: number;
 }
 
-const linspace = (lower: number, upper: number, noPoints: number = 101) => {
+export const linspace = (
+  lower: number,
+  upper: number,
+  noPoints: number = 101
+) => {
   const delta = (upper - lower) / (Math.round(noPoints) - 1);
   const xs = Array(noPoints)
     .fill(0)
