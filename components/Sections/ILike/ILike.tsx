@@ -18,7 +18,7 @@ export const ILike = (props: SectionProps) => {
   return (
     <section
       id={props.id}
-      className="w-full h-screen px-8 py-12 md:pt-16 flex flex-col gap-y-12 md:gap-y-0 items-center "
+      className="w-full h-full px-8 py-12 md:pt-16 flex flex-col gap-y-12 md:gap-y-0 items-center "
     >
       <HighlightedHeading>I like...</HighlightedHeading>
       <div className="flex flex-col h-full md:flex-row items-center w-fit justify-around md:gap-x-16 lg:gap-x-32">
