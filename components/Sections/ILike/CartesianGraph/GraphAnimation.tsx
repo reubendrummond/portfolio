@@ -27,17 +27,35 @@ export const GraphAnimation = ({ className }: { className: string }) => {
         strokeStyle: "grey",
       })
     );
+
+    const toHex = (cssVarName: string) => {
+      const val = getComputedStyle(document.documentElement).getPropertyValue(
+        cssVarName
+      );
+      console.log(val.split(" ").filter((s) => Boolean(s)));
+      return val
+        .split(" ")
+        .filter((s) => Boolean(s))
+        .map((rgb) => parseInt(rgb).toString(16))
+        .reduce((accumulator, current) => accumulator + current, "#");
+    };
+    console.log(toHex("--primary"));
+
     cc.plotFunctions.push(
       cc.plotFunction(fcn, {
         lineWidth: 6,
-        strokeStyle: "#AC57F2",
+        strokeStyle: toHex("--primary"),
+        // strokeStyle: "#AC57F2",
         lineCap: "round",
       })
+    );
+    console.log(
+      getComputedStyle(document.documentElement).getPropertyValue("--primary")
     );
     cc.plotFunctions.push(
       cc.plotFunctionTangents(-1.1, 1.1, 2500, 1.5, fcn, {
         lineWidth: 4,
-        strokeStyle: "#818CF8",
+        strokeStyle: toHex("--primary-light"),
       })
     );
 

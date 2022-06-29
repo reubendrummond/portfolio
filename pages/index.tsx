@@ -1,5 +1,5 @@
 import Navbar from "@components/Navbar";
-import { ILike } from "@components/Sections/ILike/ILike";
+import { ILike } from "@components/Sections/ILike";
 import type { NextPage } from "next";
 import { useEffect } from "react";
 

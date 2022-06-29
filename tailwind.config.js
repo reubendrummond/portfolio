@@ -16,6 +16,9 @@ module.exports = {
           light: "rgb(var(--primary-light) / <alpha-value>)",
           dark: "rgb(var(--primary-dark) / <alpha-value>)",
         },
+        secondary: {
+          DEFAULT: "rgb(var(--secondary) / <alpha-value>)",
+        },
       },
       keyframes: {
         leftToRight: {

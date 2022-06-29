@@ -24,15 +24,17 @@ a {
   box-sizing: border-box;
 }
 
-@layer base {
-  :root {
-    @apply theme-space;
-  }
+:root {
+  @apply theme-space;
+}
 
+@layer base {
   .theme-space {
-    --primary: 124 58 237;
+    --primary: 172 87 242;
     --primary-dark: 109 40 217;
     --primary-light: 167 139 250;
+
+    --secondary: 199 210 254;
 
     /* --secondary: ;
     --secondary-dark ;
@@ -68,14 +70,10 @@ a {
     font-family: "Poppins", sans-serif;
   }
 
-  .feature {
-    @apply text-[160px];
-  }
-
   h1,
   h2,
   h3 {
-    @apply text-slate-600;
+    @apply text-gray-700;
   }
 
   h1 {
@@ -113,11 +111,12 @@ a {
 }
 
 @layer utilities {
-  .primary-color {
-    @apply text-[#AC57F2];
-  }
+}
 
-  .bg-secondary-color {
-    @apply bg-[#C7D2FE];
-  }
+.stop-light {
+  stop-color: rgb(var(--primary-light));
+}
+
+.stop-dark {
+  stop-color: rgb(var(--primary-dark));
 }
