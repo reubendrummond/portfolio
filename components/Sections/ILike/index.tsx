@@ -1,11 +1,11 @@
 import { HighlightedHeading } from "@components/Headings";
 import React from "react";
-import { SectionProps } from "../SectionTypes";
+import { Section, SectionProps } from "../Section";
 import { GraphAnimation } from "./CartesianGraph/GraphAnimation";
 import { CodeLogo } from "./CodeLogo";
 import { Typing } from "./Typing";
 
-export const ILike = (props: SectionProps) => {
+const ILike = (props: SectionProps) => {
   // const sizes = {
   //   sm: 250,
   //   md: 300,
@@ -16,10 +16,7 @@ export const ILike = (props: SectionProps) => {
   const sizesClass = "w-[200px] md:w-[280px] lg:w-[350px] xl:w-[350px]";
 
   return (
-    <section
-      id={props.id}
-      className="w-full h-full px-8 py-12 md:pt-16 flex flex-col md:gap-y-0 items-center "
-    >
+    <Section className="w-full h-full px-8 py-12 md:pt-16 flex flex-col md:gap-y-0 items-center ">
       <HighlightedHeading>I like...</HighlightedHeading>
       <div className="flex flex-col h-full md:flex-row items-center w-fit justify-around md:gap-x-16 lg:gap-x-32">
         <div className="flex flex-col gap-y-4 items-center">
@@ -34,6 +31,8 @@ export const ILike = (props: SectionProps) => {
           <GraphAnimation className={sizesClass} />
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
+
+export default ILike;

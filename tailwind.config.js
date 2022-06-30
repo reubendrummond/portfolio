@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const { fontFamily, spacing } = require("tailwindcss/defaultTheme");
+const { fontFamily, spacing, theme } = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
@@ -18,6 +18,19 @@ module.exports = {
         },
         secondary: {
           DEFAULT: "rgb(var(--secondary) / <alpha-value>)",
+          light: "rgb(var(--secondary-light) / <alpha-value>)",
+          dark: "rgb(var(--secondary-dark) / <alpha-value>)",
+        },
+        gray: {
+          100: colors.neutral[100],
+          200: colors.neutral[200],
+          300: colors.neutral[300],
+          400: colors.neutral[400],
+          500: colors.neutral[500],
+          600: colors.neutral[600],
+          700: colors.neutral[700],
+          800: colors.neutral[800],
+          900: colors.neutral[900],
         },
       },
       keyframes: {

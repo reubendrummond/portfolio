@@ -1,14 +1,22 @@
 import Navbar from "@components/Navbar";
-import { ILike } from "@components/Sections/ILike";
+import ILike from "@components/Sections/ILike";
+import Hero from "@components/Sections/Hero";
+import ContactMe from "@components/Sections/Contact";
 import type { NextPage } from "next";
 import { useEffect } from "react";
+import Technologies from "@components/Sections/Technologies";
 
 const Home: NextPage = () => {
   return (
-    <>
-      {/* <Navbar /> */}
-      <ILike name="I Like" id="1" />
-    </>
+    <div className="relative h-full">
+      <main className="snap-mandatory snap-y h-full w-screen overflow-x-hidden overflow-y-scroll bg-gray-50 dark:bg-neutral-900">
+        <Hero />
+        <ILike />
+        <Technologies />
+        {/* <ContactMe /> */}
+      </main>
+      {process.env.NODE_ENV !== "production" && <Navbar />}
+    </div>
   );
 };
 

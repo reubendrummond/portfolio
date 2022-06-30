@@ -9,10 +9,12 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   height: 100%;
+  overflow-x: none;
+  @apply transition-colors ease-in duration-300;
 }
 
 #__next {
-  height: 100%;
+  @apply h-full;
 }
 
 a {
@@ -35,6 +37,7 @@ a {
     --primary-light: 167 139 250;
 
     --secondary: 199 210 254;
+    --secondary-dark: 58 89 156;
 
     /* --secondary: ;
     --secondary-dark ;
@@ -73,7 +76,7 @@ a {
   h1,
   h2,
   h3 {
-    @apply text-gray-700;
+    @apply text-gray-700 dark:text-gray-200;
   }
 
   h1 {
@@ -90,24 +93,11 @@ a {
   p,
   a {
     font-family: "Montserrat", sans-serif;
+    @apply text-gray-900 dark:text-gray-100;
   }
 }
 
 @layer components {
-  .logo {
-    @apply font-bold text-4xl;
-  }
-
-  .btn-standard {
-    @apply flex flex-row px-4 py-2 rounded-md hover:cursor-pointer;
-  }
-
-  .btn-primary {
-    @apply btn-standard;
-  }
-  .btn-secondary {
-    @apply btn-standard;
-  }
 }
 
 @layer utilities {
@@ -118,5 +108,5 @@ a {
 }
 
 .stop-dark {
-  stop-color: rgb(var(--primary-dark));
+  stop-color: rgb(var(--primary));
 }
