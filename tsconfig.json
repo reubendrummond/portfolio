@@ -19,7 +19,8 @@
       "@components/*": ["components/*"],
       "@styles/*": ["styles/*"],
       "@auth/*": ["auth/*"],
-      "@requests/*": ["requests/*"]
+      "@requests/*": ["requests/*"],
+      "@schemas/*": ["schemas/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

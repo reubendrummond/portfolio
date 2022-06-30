@@ -39,8 +39,21 @@ export const CodeLogo = ({ className }: CodoLogoProps) => {
           y2="144.75"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#A259FF" />
-          <stop offset="1" stopColor="#818CF8" />
+          <stop
+            // stopColor="#A259FF"
+            className="stop-light"
+            // style={{
+            //   stopColor: "var(--primary)",
+            // }}
+          />
+          <stop
+            offset="1"
+            className="stop-dark"
+            // style={{
+            //   stopColor: "var(--primary-light)",
+            // }}
+            // stopColor="#818CF8"
+          />
         </linearGradient>
       </defs>
     </svg>

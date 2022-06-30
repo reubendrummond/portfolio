@@ -4,16 +4,18 @@ type HeadingProps = {
 
 export const HighlightedHeading = ({ children }: HeadingProps) => {
   return (
-    <div className="relative">
+    <div className="relative w-fit">
       <div
-        className="absolute -z-10 w-[120%] h-[55%] bg-secondary-color"
+        className="absolute w-[120%] h-[55%] bg-secondary dark:bg-secondary-dark"
         style={{
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
         }}
       />
-      <h1 className="primary-color">{children}</h1>
+      <h1 className="text-primary dark:text-primary relative w-fit">
+        {children}
+      </h1>
     </div>
   );
 };
