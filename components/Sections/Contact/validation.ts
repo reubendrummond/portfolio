@@ -1,10 +1,10 @@
-import yup from "yup";
+import * as yup from "yup";
 
-export const contactMeSchema = yup.object().shape({
+export const contactFormSchema = yup.object().shape({
   email: yup
     .string()
-    .email("Input must be an email")
-    .required("Email is required"),
+    .required("Email is required")
+    .email("Input must be an email"),
   phoneNumber: yup
     .string()
     .matches(/^(?:\+\d{1,2})?(?<=)\d+\s*$/, "Input must be a phone number"),

@@ -13,7 +13,7 @@ const Home: NextPage = () => {
         <Hero />
         <ILike />
         <Technologies />
-        {/* <ContactMe /> */}
+        <ContactMe />
       </main>
       {process.env.NODE_ENV !== "production" && <Navbar />}
     </div>
