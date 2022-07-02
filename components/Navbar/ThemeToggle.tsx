@@ -2,15 +2,17 @@ import { MoonIcon, SunIcon, ColorSwatchIcon } from "@heroicons/react/outline";
 import { useState, useCallback, useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 const ThemeToggle = () => {
-  // const [theme, setTheme] = useState<"light" | "dark" | null>(null);
+  const { theme, setTheme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
   const [nextDiv, setNextDiv] = useState<HTMLElement | null>(null);
   const themes = ["theme-space", "theme-weed", "theme-sunset"];
 
   useEffect(() => {
+    setIsMounted(true);
     if (document) setNextDiv(document.getElementById("__next"));
   }, []);
 
-  const { theme, setTheme } = useTheme();
+  useEffect(() => console.log(theme === "dark"), [theme]);
 
   const toggleTheme = () => {
     if (theme === "dark") {
@@ -31,7 +33,7 @@ const ThemeToggle = () => {
         onClick={toggleTheme}
         className="h-8 aspect-square [&>*]:stroke-gray-900 [&>*]:dark:stroke-gray-200"
       >
-        {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+        {isMounted && (theme === "dark" ? <SunIcon /> : <MoonIcon />)}
       </button>
       <button
         onClick={toggleColors}

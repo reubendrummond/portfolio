@@ -9,10 +9,10 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
     <>
       <Head>
         <title>Portfolio</title>
-        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <link rel="icon" href="/images/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <ThemeProvider attribute="class">
+      <ThemeProvider attribute="class" defaultTheme="system">
         <Component {...pageProps} />
       </ThemeProvider>
     </>

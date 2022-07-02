@@ -7,6 +7,6 @@ export const contactFormSchema = yup.object().shape({
     .email("Input must be an email"),
   phoneNumber: yup
     .string()
-    .matches(/^(?:\+\d{1,2})?(?<=)\d+\s*$/, "Input must be a phone number"),
+    .matches(/^(?:\+\d{1,2})?\d+(?=\s+$|$)/, "Input must be a phone number"),
   message: yup.string().required("Message must not be empty"),
 });
