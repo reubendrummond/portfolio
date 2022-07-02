@@ -5,7 +5,7 @@ export const Section: FC<PropsWithChildren<SectionProps>> = ({
   className,
 }) => {
   return (
-    <section className={"h-full w-full snap-start " + className}>
+    <section className={"h-full w-full snap-start px-8 py-12 " + className}>
       {children}
     </section>
   );
