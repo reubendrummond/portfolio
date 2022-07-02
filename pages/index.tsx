@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         <Technologies />
         <ContactMe />
       </main>
-      {process.env.NODE_ENV !== "production" && <Navbar />}
+      <Navbar />
     </div>
   );
 };

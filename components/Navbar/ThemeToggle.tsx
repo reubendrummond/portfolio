@@ -1,7 +1,8 @@
 import { MoonIcon, SunIcon, ColorSwatchIcon } from "@heroicons/react/outline";
 import { useState, useCallback, useEffect, useRef } from "react";
+import { useTheme } from "next-themes";
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState<"light" | "dark" | null>(null);
+  // const [theme, setTheme] = useState<"light" | "dark" | null>(null);
   const [nextDiv, setNextDiv] = useState<HTMLElement | null>(null);
   const themes = ["theme-space", "theme-weed", "theme-sunset"];
 
@@ -9,12 +10,12 @@ const ThemeToggle = () => {
     if (document) setNextDiv(document.getElementById("__next"));
   }, []);
 
+  const { theme, setTheme } = useTheme();
+
   const toggleTheme = () => {
     if (theme === "dark") {
-      nextDiv?.classList.remove("dark");
       setTheme("light");
     } else {
-      nextDiv?.classList.add("dark");
       setTheme("dark");
     }
   };

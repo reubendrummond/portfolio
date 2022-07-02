@@ -6,8 +6,8 @@ import { contactFormSchema } from "./validation";
 
 const ContactMe = () => {
   const email = "reubendrummond@gmail.com";
-  const copyEmailToClipboard = () => {
-    navigator.clipboard.writeText(email);
+  const copyEmailToClipboard = async () => {
+    await navigator.clipboard.writeText(email);
     alert("copied to clipboard!");
   };
 
