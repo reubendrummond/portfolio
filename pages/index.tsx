@@ -3,7 +3,6 @@ import ILike from "@components/Sections/ILike";
 import Hero from "@components/Sections/Hero";
 import ContactMe from "@components/Sections/Contact";
 import type { NextPage } from "next";
-import { useEffect } from "react";
 import Technologies from "@components/Sections/Technologies";
 
 const Home: NextPage = () => {
