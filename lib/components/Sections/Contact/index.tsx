@@ -30,21 +30,23 @@ const ContactMe = () => {
   };
 
   return (
-    <Section className="flex flex-col items-center justify-between pb-16">
+    <Section className="flex flex-col items-center pb-16">
       <HighlightedHeading>Contact</HighlightedHeading>
-      <div className="flex flex-col items-center">
-        {/* Email */}
-        <div className="flex gap-x-2 items-center">
-          <p className="font-medium">{email}</p>
-          <DuplicateIcon
-            className="w-8 hover:cursor-pointer stroke-gray-800 dark:stroke-gray-200"
-            onClick={copyEmailToClipboard}
-          />
+      <div className="h-full flex flex-col justify-around">
+        <div className="flex flex-col items-center">
+          {/* Email */}
+          <div className="flex gap-x-2 items-center">
+            <p className="font-medium">{email}</p>
+            <DuplicateIcon
+              className="w-8 hover:cursor-pointer stroke-gray-800 dark:stroke-gray-200"
+              onClick={copyEmailToClipboard}
+            />
+          </div>
+          <Contacts email={email} />
         </div>
-        <Contacts email={email} />
-      </div>
-      <div className="min-w-[300px] w-full max-w-md">
-        <ContactForm />
+        <div className="min-w-[300px] w-full max-w-md">
+          <ContactForm />
+        </div>
       </div>
     </Section>
   );
