@@ -3,12 +3,11 @@ import Navbar from "lib/components/Navbar";
 
 const MainLayout: FC = ({ children }) => {
   return (
-    <div className="h-screen flex flex-col overflow-hidden overflow-y-scroll">
-      <Navbar />
-      <div className="p-8 bg-slate-100 dark:bg-slate-800 grow">
+    <div className="relative h-full">
+      <main className="snap-mandatory snap-y h-full w-screen bg-gray-50 dark:bg-neutral-900 overflow-x-hidden overflow-y-scroll">
         {children}
-        {/* <Footer /> */}
-      </div>
+      </main>
+      <Navbar />
     </div>
   );
 };
