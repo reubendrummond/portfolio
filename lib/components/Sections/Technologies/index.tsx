@@ -1,4 +1,4 @@
-import { HighlightedHeading } from "@components/Headings";
+import { HighlightedHeading } from "lib/components/Headings";
 import { Section } from "../Section";
 import Image from "next/image";
 
@@ -19,8 +19,9 @@ const Technologies = () => {
   ];
 
   return (
-    <Section className="px-8 py-12 md:pt-16 flex flex-col items-center">
+    <Section className="px-8 py-12 md:pt-16 flex flex-col items-center gap-y-2">
       <HighlightedHeading>Technologies</HighlightedHeading>
+      <p>My favourites and competencies</p>
       <div className="my-auto">
         <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
           {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4"> */}

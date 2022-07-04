@@ -1,4 +1,4 @@
-import { HighlightedHeading } from "@components/Headings";
+import { HighlightedHeading } from "lib/components/Headings";
 import React from "react";
 import { Section, SectionProps } from "../Section";
 import { GraphAnimation } from "./CartesianGraph/GraphAnimation";
@@ -22,7 +22,7 @@ const ILike = (props: SectionProps) => {
         <div className="flex flex-col gap-y-4 items-center">
           <div className="flex flex-col justify-center items-center gap-y-1">
             <Typing content="software" className="font-mono text-2xl md:3xl" />
-            <p>Frontend and backend web dev.</p>
+            <p>Frontend and backend web dev</p>
           </div>
           <CodeLogo className={sizesClass} />
         </div>
