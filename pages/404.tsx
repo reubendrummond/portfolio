@@ -1,4 +1,4 @@
-import MainLayout from "@components/Layouts/MainLayout";
+import MainLayout from "lib/components/Layouts/MainLayout";
 import { HomeIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import { useRouter } from "next/router";
