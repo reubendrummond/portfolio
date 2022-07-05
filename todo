@@ -1,6 +1,5 @@
 - add projects section
 - add about me section
-- add email api for form (and captcha???)
 
 - animations on entry (framer motion)
 
@@ -8,7 +7,9 @@ could do
 
 - fix autofill form styling issues
 - toast animations
+- add spam protection on form
 
 bugs
 
+- change hosting provider to allow for post requests to backend
 - svg animation bug on mobile
