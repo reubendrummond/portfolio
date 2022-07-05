@@ -12,7 +12,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
         <title>Portfolio</title>
         <link
           rel="shortcut icon"
-          href={process.env.NEXT_PUBLIC_BASE_PATH + "/images/favicon.ico"}
+          href={process.env.NEXT_PUBLIC_BASE_PATH || "" + "/images/favicon.ico"}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
