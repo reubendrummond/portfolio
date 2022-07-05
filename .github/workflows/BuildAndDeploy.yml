@@ -1,6 +1,6 @@
 # cache
 
-name: TestPipeline
+name: Build and deploy
 
 on:
   push:
@@ -35,6 +35,8 @@ jobs:
       - name: Run linting
         run: npm run lint
       - name: Run export
+        env:
+          NEXT_PUBLIC_BASE_PATH: "/portfolio" 
         run: |
           npm run export
           touch ./out/.nojekyll
