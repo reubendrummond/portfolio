@@ -1,6 +1,7 @@
 import { HighlightedHeading } from "lib/components/Headings";
 import React from "react";
 import { Section, SectionProps } from "../Section";
+import { CartesianGraph } from "./AnimatedGraphSVG/FunctionPlotter";
 import { GraphAnimation } from "./CartesianGraph/GraphAnimation";
 import { CodeLogo } from "./CodeLogo";
 import { Typing } from "./Typing";
@@ -28,7 +29,31 @@ const ILike = (props: SectionProps) => {
         </div>
         <div className="flex flex-col gap-y-4">
           <h2 className="text-center">Math</h2>
-          <GraphAnimation className={sizesClass} />
+          {/* <GraphAnimation className={sizesClass} /> */}
+          <CartesianGraph
+            bounds={{
+              x1: -1.5,
+              x2: 1.5,
+              y1: -1.5,
+              y2: 1.5,
+            }}
+            axisFreq={{
+              major: 5,
+              minor: 1,
+            }}
+            className={sizesClass}
+            plots={[
+              {
+                mathFunction: (x: number) => x * (x - 1) * (x + 1),
+                plotClass: "",
+                tangentClass: "",
+                tangentBounds: {
+                  x1: -1,
+                  x2: 1,
+                },
+              },
+            ]}
+          />
         </div>
       </div>
     </Section>

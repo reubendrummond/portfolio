@@ -1,9 +1,14 @@
-- graph canvas -> svg
-
 - add projects section
+- add about me section
 - add email api for form (and captcha???)
 
-- animations on entry
-- update form styling
+- animations on entry (framer motion)
 
-- toasts!
+could do
+
+- fix autofill form styling issues
+- toast animations
+
+bugs
+
+- svg animation bug on mobile

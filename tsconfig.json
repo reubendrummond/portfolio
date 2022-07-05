@@ -16,13 +16,10 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["lib/components/*"],
-      "@styles/*": ["styles/*"],
-      "@auth/*": ["auth/*"],
-      "@requests/*": ["requests/*"],
-      "@schemas/*": ["schemas/*"]
+      "@components/*": ["/lib/components/*"],
+      "@styles/*": ["styles/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-enlib/schemas/*/**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

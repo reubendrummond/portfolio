@@ -12,7 +12,7 @@ type DispatchToast = (
 ) => void;
 
 interface ToastContext {
-  dispatch: DispatchToast;
+  dispatchToast: DispatchToast;
 }
 
 interface Toast {
@@ -29,7 +29,7 @@ export const ToastProvider: FC = ({ children }) => {
   //   const toastRef = useRef<HTMLDivElement>(null);
   const [toasts, setToasts] = useState<Toast[]>([]);
 
-  const dispatch: DispatchToast = (type, message, duration = 3000) => {
+  const dispatchToast: DispatchToast = (type, message, duration = 3000) => {
     const t: Toast = {
       id: Math.random(),
       type,
@@ -48,7 +48,7 @@ export const ToastProvider: FC = ({ children }) => {
   };
 
   const addToast = () => {
-    dispatch(
+    dispatchToast(
       Math.random() < 0.5 ? "error" : "success",
       `my random message`,
       30000
@@ -58,7 +58,7 @@ export const ToastProvider: FC = ({ children }) => {
   return (
     <ToastContext.Provider
       value={{
-        dispatch,
+        dispatchToast,
       }}
     >
       <div className="h-full relative">
