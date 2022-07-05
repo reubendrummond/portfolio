@@ -32,7 +32,6 @@ export const GraphAnimation = ({ className }: { className: string }) => {
       const val = getComputedStyle(document.documentElement).getPropertyValue(
         cssVarName
       );
-      console.log(val.split(" ").filter((s) => Boolean(s)));
       return val
         .split(" ")
         .filter((s) => Boolean(s))
@@ -49,9 +48,7 @@ export const GraphAnimation = ({ className }: { className: string }) => {
         lineCap: "round",
       })
     );
-    console.log(
-      getComputedStyle(document.documentElement).getPropertyValue("--primary")
-    );
+
     cc.plotFunctions.push(
       cc.plotFunctionTangents(-1.1, 1.1, 2500, 1.5, fcn, {
         lineWidth: 4,
