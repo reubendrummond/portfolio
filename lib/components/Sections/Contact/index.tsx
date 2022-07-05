@@ -16,6 +16,7 @@ import {
 } from "formik";
 import { contactFormSchema } from "lib/schemas/contactForm";
 import { useToast } from "lib/hooks/toast";
+import { PREFIX } from "lib/constants";
 
 const ContactMe = () => {
   const { dispatchToast } = useToast();
@@ -102,7 +103,7 @@ const ContactForm = () => {
       }}
       validationSchema={contactFormSchema}
       onSubmit={(values, actions) => {
-        fetch("/api/contact", {
+        fetch(PREFIX + "/api/contact", {
           method: "POST",
           body: JSON.stringify(values),
         })
