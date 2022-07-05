@@ -14,18 +14,18 @@ import {
   FormikErrors,
   FormikProps,
 } from "formik";
-import { contactFormSchema } from "./validation";
+import { contactFormSchema } from "lib/schemas/contactForm";
 import { useToast } from "lib/hooks/toast";
 
 const ContactMe = () => {
-  const { dispatch } = useToast();
+  const { dispatchToast } = useToast();
   const email = "reubendrummond@gmail.com";
   const copyEmailToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(email);
-      dispatch("success", "Copied to clipboard!");
+      dispatchToast("success", "Copied to clipboard");
     } catch (err) {
-      alert("Can only copy to clipboard on HTTPS.");
+      alert("Can only copy to clipboard on HTTPS");
     }
   };
 
@@ -92,6 +92,7 @@ const Contacts = ({ email }: { email: string }) => {
 };
 
 const ContactForm = () => {
+  const { dispatchToast } = useToast();
   return (
     <Formik
       initialValues={{
@@ -101,12 +102,26 @@ const ContactForm = () => {
       }}
       validationSchema={contactFormSchema}
       onSubmit={(values, actions) => {
-        console.log(values);
-        alert(
-          "This form does currently does nothing!\n" +
-            JSON.stringify(values, null, 2)
-        );
-        actions.setSubmitting(false);
+        fetch("/api/contact", {
+          method: "POST",
+          body: JSON.stringify(values),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            dispatchToast("success", "Form submitted successfully", 6000);
+            actions.resetForm();
+          })
+          .catch((err) => {
+            dispatchToast(
+              "error",
+              "There was an error submitting the form. Please try again.",
+              6000
+            );
+            console.error(err);
+          })
+          .finally(() => {
+            actions.setSubmitting(false);
+          });
       }}
     >
       {(props: FormikProps<any>) => (
@@ -140,7 +155,33 @@ const ContactForm = () => {
               }
               className="w-full text-gray-200 font-semibold py-2 bg-gradient-to-tr from-primary to-primary-light disabled:opacity-60 hover:opacity-90 rounded-md"
             >
-              Submit
+              {props.isSubmitting ? (
+                <div className="mx-auto w-fit flex items-center">
+                  <svg
+                    className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                  </svg>{" "}
+                  <span>Submitting</span>
+                </div>
+              ) : (
+                "Submit"
+              )}
             </button>
           </div>
         </Form>
