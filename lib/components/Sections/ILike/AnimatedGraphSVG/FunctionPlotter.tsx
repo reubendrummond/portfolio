@@ -99,13 +99,14 @@ export class TangentAnimator {
         tangentLength / (2 * Math.pow(1 + Math.pow(gradAv, 2), 0.5));
       const dyTangent = dxTangent * gradAv;
 
+      const dps = 5;
       const p1: Point = {
-        x: x + dxTangent,
-        y: y + dyTangent,
+        x: +(x + dxTangent).toFixed(dps),
+        y: +(y + dyTangent).toFixed(dps),
       };
       const p2: Point = {
-        x: x - dxTangent,
-        y: y - dyTangent,
+        x: +(x - dxTangent).toFixed(dps),
+        y: +(y - dyTangent).toFixed(dps),
       };
 
       return [p1, p2];
@@ -302,26 +303,26 @@ const Tangent = ({
   const pathRef = useRef<SVGPathElement>(null);
   const { paths, dt } = tangentPath;
   const i = useRef(0);
+  const incRef = useRef(1);
   const max = paths.length - 1;
 
   useEffect(() => {
-    let inc = 1;
-    const int = setInterval(() => {
-      i.current += inc;
-      if (i.current === max) inc = -1;
-      if (i.current === 0) inc = 1;
+    const interval = setInterval(() => {
+      i.current += incRef.current;
+      if (i.current === max) incRef.current = -1;
+      if (i.current === 0) incRef.current = 1;
 
       pathRef.current?.setAttribute("d", paths[i.current]);
     }, dt);
 
-    return () => clearInterval(int);
+    return () => clearInterval(interval);
   }, [paths, dt, max]);
 
   return (
     <path
       className="stroke-primary-light"
       fill="none"
-      strokeWidth={"0.5%"}
+      strokeWidth={"0.4%"}
       ref={pathRef}
     />
   );

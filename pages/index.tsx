@@ -4,13 +4,17 @@ import ContactMe from "lib/components/Sections/Contact";
 import type { NextPage } from "next";
 import Technologies from "lib/components/Sections/Technologies";
 import MainLayout from "lib/components/Layouts/MainLayout";
+import Projects from "@components/Sections/Projects";
+import AboutMe from "@components/Sections/AboutMe";
 
 const Home: NextPage = () => {
   return (
     <MainLayout>
       <Hero />
+      <AboutMe />
       <ILike />
       <Technologies />
+      <Projects />
       <ContactMe />
     </MainLayout>
   );

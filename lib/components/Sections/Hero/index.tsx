@@ -2,7 +2,7 @@ import { Section } from "../Section";
 
 const Hero = () => {
   return (
-    <Section className="flex justify-center relative">
+    <Section className="flex justify-center relative" id="hero">
       <svg
         viewBox="0 0 200 200"
         xmlns="http://www.w3.org/2000/svg"

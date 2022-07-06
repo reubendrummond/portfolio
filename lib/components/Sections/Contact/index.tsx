@@ -31,7 +31,7 @@ const ContactMe = () => {
   };
 
   return (
-    <Section className="flex flex-col items-center pb-16">
+    <Section className="flex flex-col items-center pb-16" id="contact">
       <HighlightedHeading>Contact</HighlightedHeading>
       <div className="h-full flex flex-col justify-around">
         <div className="flex flex-col items-center">

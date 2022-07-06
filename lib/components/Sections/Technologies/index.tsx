@@ -19,7 +19,10 @@ const Technologies = () => {
   ];
 
   return (
-    <Section className="px-8 py-12 md:pt-16 flex flex-col items-center gap-y-2">
+    <Section
+      className="px-8 py-12 md:pt-16 flex flex-col items-center gap-y-2"
+      id="technologies"
+    >
       <HighlightedHeading>Technologies</HighlightedHeading>
       <p>My favourites and competencies</p>
       <div className="my-auto">

@@ -1,15 +1,16 @@
-- add projects section
+- add projects section (mdx) (sprk, portfolio, socials)
 - add about me section
+- create custom favicon
 
 - animations on entry (framer motion)
 
 could do
 
+- coloured overlays for main technologies (next, ts, tailwind, react)
 - fix autofill form styling issues
 - toast animations
 - add spam protection on form
 
 bugs
 
-- change hosting provider to allow for post requests to backend
 - svg animation bug on mobile
