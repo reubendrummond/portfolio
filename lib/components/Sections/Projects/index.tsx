@@ -34,18 +34,18 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
   const toggle = () => setDescriptionShowing((d) => !d);
 
   return (
-    <div className="relative w-[350px] h-[250px] rounded-xl overflow-hidden hover:scale-105 transition-transform shadow-lg">
+    <div className="relative w-[360px] h-[240px] rounded-xl overflow-hidden hover:scale-105 transition-transform shadow-lg">
       <Image
         src={mainImagePath}
         alt={mainImagePath}
-        layout="responsive"
-        width="350px"
-        height="250px"
+        layout="fill"
+        width="3"
+        height="2"
         onClick={toggle}
         className="cursor-pointer"
       />
       <div
-        className={`absolute  px-4 py-4 w-full h-full left-0 top-0 bg-gray-800 opacity-90 [&>*]:opacity-100 overflow-hidden ${
+        className={`absolute px-4 py-4 w-full h-full left-0 top-0 bg-gray-800/90 overflow-hidden ${
           descriptionShowing ? "" : "hidden"
         }`}
       >
@@ -84,7 +84,7 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
               href={liveLink}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-x-1 bg-primary rounded-full px-4 py-1 hover:opacity-80 transition-opacity  group"
+              className="flex items-center gap-x-1 bg-primary rounded-full px-4 py-1 hover:bg-primary/80 transition-colors group"
             >
               <p className="text-gray-200 font-bold">Live</p>{" "}
               <ArrowRightIcon className="w-6 stroke-gray-200 group-hover:translate-x-1 transition-transform" />
