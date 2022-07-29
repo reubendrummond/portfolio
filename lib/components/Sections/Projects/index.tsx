@@ -41,6 +41,7 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
         layout="fill"
         onClick={toggle}
         className="cursor-pointer"
+        loading="eager"
       />
 
       <div
