@@ -32,7 +32,7 @@ const ContactMe = () => {
 
   return (
     <Section
-      className="flex flex-col items-center pb-16 justify-between"
+      className="flex flex-col items-center pb-16 justify-around"
       id="contact"
     >
       <HighlightedHeading>Contact</HighlightedHeading>

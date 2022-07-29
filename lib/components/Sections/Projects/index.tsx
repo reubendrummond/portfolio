@@ -11,7 +11,20 @@ const Projects = () => {
       id="projects"
     >
       <h1>Projects</h1>
-      <div className="flex flex-wrap w-fit max-w-3xl gap-6 justify-center ">
+      <div className="relative flex flex-wrap w-fit max-w-3xl gap-6 justify-center h-fit">
+        <div
+          style={{
+            animationDelay: "2000ms",
+          }}
+          className="absolute bg-primary-dark w-[22rem] md:w-[26rem] aspect-square rounded-full mix-blend-multiply dark:mix-blend-plus-lighter filter blur-lg animate-blob opacity-50 -right-8 md:right-16 -top-20"
+        />
+        <div
+          style={{
+            animationDelay: "4000ms",
+          }}
+          className="absolute bg-primary w-[22rem] md:w-[26rem] aspect-square rounded-full mix-blend-multiply dark:mix-blend-plus-lighter filter blur-lg animate-blob opacity-60 inset-auto -left-16 top-[30%]"
+        />
+        <div className="absolute bg-primary-light w-[22rem] md:w-[22rem] aspect-square rounded-full mix-blend-multiply dark:mix-blend-plus-lighter filter blur-lg animate-blob opacity-50 -bottom-20 md:right-20" />
         {projects.map((p) => (
           <ProjectCard key={p.title} project={p} />
         ))}
