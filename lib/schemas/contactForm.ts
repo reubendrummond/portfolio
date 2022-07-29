@@ -1,14 +1,16 @@
 import * as yup from "yup";
 
 export const contactFormSchema = yup.object().shape({
+  name: yup
+    .string()
+    .required("Name is required")
+    .test("len", "2 chars min", (name) => !!name && name.length >= 2),
   email: yup
     .string()
     .required("Email is required")
     .email("Input must be an email"),
-  phoneNumber: yup
+  message: yup
     .string()
-    .matches(/^(?:\+\d{1,2})?\d+(?=\s+$|$)/, "Input must be a phone number"),
-  message: yup.string().required("Message must not be empty"),
+    .required("Message must not be empty")
+    .test("len", "10 chars min", (name) => !!name && name.length >= 10),
 });
-
-export type ContactForm = yup.InferType<typeof contactFormSchema>;

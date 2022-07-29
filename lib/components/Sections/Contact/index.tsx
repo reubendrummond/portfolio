@@ -97,8 +97,8 @@ const ContactForm = () => {
   return (
     <Formik
       initialValues={{
+        name: "",
         email: "",
-        phoneNumber: "",
         message: "",
       }}
       validationSchema={contactFormSchema}
@@ -129,19 +129,18 @@ const ContactForm = () => {
         <Form autoComplete="false">
           <div className="flex flex-col gap-y-2">
             <Field
+              name="name"
+              label="Name"
+              type="tel"
+              required={true}
+              component={StyledInput}
+            ></Field>
+            <Field
               name="email"
               label="Email"
               type="email"
               component={StyledInput}
             ></Field>
-            <Field
-              name="phoneNumber"
-              label="Phone number"
-              type="tel"
-              required={false}
-              component={StyledInput}
-            ></Field>
-
             <Field
               name="message"
               label="Message"
