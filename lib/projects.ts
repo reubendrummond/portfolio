@@ -95,7 +95,7 @@ const personalPortfolio: Project = {
 const socalMediaClone: Project = {
   title: "Social media clone",
   description:
-    "A social media application for where I could experiment with technologies such as Prisma, NextAuth.js, and SWR.",
+    "A social media application where I am experimenting with technologies such as Prisma, NextAuth.js, and SWR.",
   body: "Some body here",
   technologies: [
     technologies.TS,
