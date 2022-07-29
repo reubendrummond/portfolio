@@ -64,7 +64,7 @@ const technologies: { [key: string]: Technology } = {
 const sprkProject: Project = {
   title: "Tutor dashboard",
   description:
-    "A webapp used track of tutoring sessions and payments - my first useful project. No framework used.",
+    "A webapp used to track tutoring sessions and payments - my first useful project. No framework used.",
   body: "Some body here",
   technologies: [
     technologies.JS,
