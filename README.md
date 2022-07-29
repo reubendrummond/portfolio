@@ -1,4 +1,7 @@
 # My Portfolio Website
-In progress!
 
-See at https://reubendrummond.github.io/portfolio/
+### reubendrummond.com
+
+*Deployed with [Vercel](vercel.com)*
+
+
