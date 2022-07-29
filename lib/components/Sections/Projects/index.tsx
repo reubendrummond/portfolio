@@ -7,7 +7,7 @@ import { ArrowRightIcon, XIcon } from "@heroicons/react/outline";
 const Projects = () => {
   return (
     <Section
-      className="flex flex-col gap-y-8 pt-8 pb-16 px-4 md:px-8 items-center h-min-fit h-fit snap"
+      className="flex flex-col gap-y-8 pt-8 pb-16 px-4 md:px-8 items-center h-min-fit h-fit snap justify-center"
       id="projects"
     >
       <h1>Projects</h1>
