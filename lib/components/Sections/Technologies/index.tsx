@@ -11,7 +11,7 @@ const Technologies = () => {
     { name: "JavaScript", src: "js" },
     { name: "NodeJS", src: "node-js" },
     { name: "Python", src: "python" },
-    { name: "PostgreSQL", src: "postgre-sql" },
+    { name: "SQL", src: "postgre-sql" },
     { name: "HTML", src: "html" },
     { name: "Firebase", src: "firebase" },
     { name: "Git", src: "git" },

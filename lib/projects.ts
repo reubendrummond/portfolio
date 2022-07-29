@@ -3,10 +3,10 @@ export interface Project {
   description: string;
   body: string;
   technologies: Technology[];
-  mainImagePath: string;
   learningOutcomes: string[];
   liveLink: string;
   githubLink?: string;
+  mainImagePath: string;
 }
 
 interface Technology {
@@ -47,6 +47,18 @@ const technologies: { [key: string]: Technology } = {
     name: "Tailwind",
     path: basePath + "/tailwind-css.svg",
   },
+  PRISMA: {
+    name: "Prisma",
+    path: basePath + "/prisma.svg",
+  },
+  GIT: {
+    name: "git",
+    path: basePath + "/git.svg",
+  },
+  NPM: {
+    name: "npm",
+    path: basePath + "/npm.svg",
+  },
 };
 
 const sprkProject: Project = {
@@ -71,7 +83,7 @@ const sprkProject: Project = {
 
 const personalPortfolio: Project = {
   title: "Personal website",
-  description: "ahhh",
+  description: "This is a bit meta.",
   body: "Some body here",
   technologies: [technologies.TS, technologies.NEXT_JS, technologies.TAILWIND],
   learningOutcomes: [],
@@ -80,4 +92,43 @@ const personalPortfolio: Project = {
   githubLink: "https://github.com/reubendrummond/portfolio",
 };
 
-export const projects: Project[] = [sprkProject, personalPortfolio];
+const socalMediaClone: Project = {
+  title: "Social media clone",
+  description:
+    "A social media application for where I could experiment with technologies such as Prisma, NextAuth.js, and SWR.",
+  body: "Some body here",
+  technologies: [
+    technologies.TS,
+    technologies.NEXT_JS,
+    technologies.TAILWIND,
+    technologies.PRISMA,
+  ],
+  learningOutcomes: [],
+  mainImagePath: "/images/projects/socials.png",
+  liveLink: "https://socials-reubendrummond.vercel.app",
+  githubLink: "https://github.com/reubendrummond/socials",
+};
+
+const nextTapi: Project = {
+  title: "Next tAPI",
+  description:
+    "Published on npm, Next tAPI is an abstaction of Next.js API routes. It provides awesome features to ensure type safety.",
+  body: "",
+  learningOutcomes: [],
+  technologies: [
+    technologies.TS,
+    technologies.NEXT_JS,
+    technologies.GIT,
+    technologies.NPM,
+  ],
+  mainImagePath: "/images/projects/next-tapi.png",
+  liveLink: "https://www.npmjs.com/package/next-tapi",
+  githubLink: "https://github.com/reubendrummond/next-tapi",
+};
+
+export const projects: Project[] = [
+  sprkProject,
+  nextTapi,
+  socalMediaClone,
+  personalPortfolio,
+];

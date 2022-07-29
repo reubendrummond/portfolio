@@ -31,23 +31,24 @@ const ContactMe = () => {
   };
 
   return (
-    <Section className="flex flex-col items-center pb-16" id="contact">
+    <Section
+      className="flex flex-col items-center pb-16 justify-between"
+      id="contact"
+    >
       <HighlightedHeading>Contact</HighlightedHeading>
-      <div className="h-full flex flex-col justify-around">
-        <div className="flex flex-col items-center">
-          {/* Email */}
-          <div className="flex gap-x-2 items-center">
-            <p className="font-medium">{email}</p>
-            <DuplicateIcon
-              className="w-8 hover:cursor-pointer stroke-gray-800 dark:stroke-gray-200"
-              onClick={copyEmailToClipboard}
-            />
-          </div>
-          <Contacts email={email} />
+      <div className="flex flex-col items-center">
+        {/* Email */}
+        <div className="flex gap-x-2 items-center">
+          <p className="font-medium">{email}</p>
+          <DuplicateIcon
+            className="w-8 hover:cursor-pointer stroke-gray-800 dark:stroke-gray-200"
+            onClick={copyEmailToClipboard}
+          />
         </div>
-        <div className="min-w-[300px] w-full max-w-md">
-          <ContactForm />
-        </div>
+        <Contacts email={email} />
+      </div>
+      <div className="min-w-[300px] w-full max-w-sm px-4">
+        <ContactForm />
       </div>
     </Section>
   );

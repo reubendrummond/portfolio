@@ -7,11 +7,11 @@ import { ArrowRightIcon, XIcon } from "@heroicons/react/outline";
 const Projects = () => {
   return (
     <Section
-      className="flex flex-col gap-y-8 pt-8 pb-16 px-4 md:px-8 items-center h-min-fit"
+      className="flex flex-col gap-y-8 pt-8 pb-16 px-4 md:px-8 items-center h-min-fit h-fit snap"
       id="projects"
     >
       <h1>Projects</h1>
-      <div className="flex flex-wrap w-full max-w-3xl gap-6 justify-center">
+      <div className="flex flex-wrap w-fit max-w-3xl gap-6 justify-center ">
         {projects.map((p) => (
           <ProjectCard key={p.title} project={p} />
         ))}
@@ -34,16 +34,15 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
   const toggle = () => setDescriptionShowing((d) => !d);
 
   return (
-    <div className="relative w-[360px] h-[240px] rounded-xl overflow-hidden hover:scale-105 transition-transform shadow-lg">
+    <div className="relative w-[360px] h-[240px] rounded-xl overflow-hidden shadow-lg">
       <Image
         src={mainImagePath}
         alt={mainImagePath}
         layout="fill"
-        width="3"
-        height="2"
         onClick={toggle}
         className="cursor-pointer"
       />
+
       <div
         className={`absolute px-4 py-4 w-full h-full left-0 top-0 bg-gray-800/90 overflow-hidden ${
           descriptionShowing ? "" : "hidden"
@@ -52,19 +51,21 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
         <button className="w-8 block ml-auto" onClick={toggle}>
           <XIcon className="stroke-gray-200" />
         </button>
-        <div className="flex flex-col h-fill items-center justify-between gap-y-2 -my-6">
-          <h3 className="text-gray-200">{title}</h3>
-          <div className="flex gap-x-2 w-fit mx-auto opacity-80 invert">
-            {technologies.map((t) => (
-              <Image
-                key={t.path}
-                src={t.path}
-                alt={t.name}
-                width="32px"
-                height="32px"
-                loading="eager"
-              />
-            ))}
+        <div className="flex flex-col h-[calc(100%-1rem)] items-center justify-between gap-y-2 -my-6">
+          <div>
+            <h3 className="text-gray-200">{title}</h3>
+            <div className="flex gap-x-2 w-fit mx-auto opacity-80 invert mt-2">
+              {technologies.map((t) => (
+                <Image
+                  key={t.path}
+                  src={t.path}
+                  alt={t.name}
+                  width="32px"
+                  height="32px"
+                  loading="eager"
+                />
+              ))}
+            </div>
           </div>
           <p className="text-gray-200 text-center">{description}</p>
           <div className="flex gap-x-2 w-fit">

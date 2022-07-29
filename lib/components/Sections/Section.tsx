@@ -6,7 +6,10 @@ export const Section: FC<PropsWithChildren<SectionProps>> = ({
   id,
 }) => {
   return (
-    <section className={"h-full w-full snap-start py-12 " + className} id={id}>
+    <section
+      className={"h-fit min-h-full w-full snap-start py-12 " + className}
+      id={id}
+    >
       {children}
     </section>
   );

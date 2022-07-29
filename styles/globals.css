@@ -11,10 +11,11 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: none;
+  min-height: 100%;
 }
 
 #__next {
-  @apply h-full;
+  @apply h-full min-h-full;
 }
 
 a {

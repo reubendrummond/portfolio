@@ -15,7 +15,7 @@ const ILike = (props: SectionProps) => {
       id="ILike"
     >
       <HighlightedHeading>I like...</HighlightedHeading>
-      <div className="flex flex-col h-full md:flex-row items-center w-fit justify-around md:gap-x-16 lg:gap-x-32">
+      <div className="flex flex-col h-full md:flex-row items-center w-fit justify-around md:gap-x-16 lg:gap-x-32 my-auto">
         <div className="flex flex-col gap-y-4 items-center">
           <div className="flex flex-col justify-center items-center gap-y-1">
             <Typing content="software" className="font-mono text-2xl md:3xl" />
