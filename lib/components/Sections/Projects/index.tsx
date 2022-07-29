@@ -67,7 +67,7 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
         </button>
         <div className="flex flex-col h-[calc(100%-1rem)] items-center justify-between gap-y-2 -my-6">
           <div>
-            <h3 className="text-gray-200">{title}</h3>
+            <h3 className="text-gray-200 text-center">{title}</h3>
             <div className="flex gap-x-2 w-fit mx-auto opacity-80 invert mt-2">
               {technologies.map((t) => (
                 <Image
