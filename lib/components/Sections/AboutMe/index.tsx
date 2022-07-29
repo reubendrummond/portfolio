@@ -1,4 +1,4 @@
-import { HighlightedHeading } from "@components/Headings";
+import { HighlightedHeading } from "lib/components/Headings";
 import { AcademicCapIcon, TerminalIcon } from "@heroicons/react/outline";
 import { FC, PropsWithChildren } from "react";
 import { Section } from "../Section";
@@ -26,7 +26,7 @@ const AboutMe = () => {
         <div className="flex flex-col md:flex-row gap-x-4 gap-y-2 bg-primary rounded-xl px-6 py-4 opacity-100 bg-gradient-to-tr from-primary to-primary-light">
           <AcademicCapIcon className="w-12 shrink-0 text-gray-100" />
           <ul className="w-full text-justify text-gray-100">
-            <li>Dean's Scholar @ QUT</li>
+            <li>Dean&#39s Scholar @ QUT</li>
             <li>Studing software engineering + maths</li>
             <li>ATAR 99.90</li>
             <li>QCE Distinguised Academic Achiever</li>
