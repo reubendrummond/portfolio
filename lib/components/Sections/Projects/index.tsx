@@ -16,15 +16,15 @@ const Projects = () => {
           style={{
             animationDelay: "2000ms",
           }}
-          className="absolute bg-primary-dark w-[22rem] md:w-[26rem] aspect-square rounded-full mix-blend-multiply dark:mix-blend-plus-lighter filter blur-lg animate-blob opacity-50 -right-8 md:right-16 -top-20"
+          className="hidden dark:block absolute bg-primary-dark w-[22rem] md:w-[26rem] aspect-square rounded-full mix-blend-multiply dark:mix-blend-plus-lighter filter blur-lg animate-blob opacity-50 -right-8 md:right-16 -top-20"
         />
         <div
           style={{
             animationDelay: "4000ms",
           }}
-          className="absolute bg-primary w-[22rem] md:w-[26rem] aspect-square rounded-full mix-blend-multiply dark:mix-blend-plus-lighter filter blur-lg animate-blob opacity-60 inset-auto -left-16 top-[30%]"
+          className="hidden dark:block absolute bg-primary w-[22rem] md:w-[26rem] aspect-square rounded-full mix-blend-multiply dark:mix-blend-plus-lighter filter blur-lg animate-blob opacity-60 inset-auto -left-16 top-[30%]"
         />
-        <div className="absolute bg-primary-light w-[22rem] md:w-[22rem] aspect-square rounded-full mix-blend-multiply dark:mix-blend-plus-lighter filter blur-lg animate-blob opacity-50 -bottom-20 md:right-20" />
+        <div className="hidden dark:block absolute bg-primary-light w-[22rem] md:w-[22rem] aspect-square rounded-full mix-blend-multiply dark:mix-blend-plus-lighter filter blur-lg animate-blob opacity-50 -bottom-20 md:right-20" />
         {projects.map((p) => (
           <ProjectCard key={p.title} project={p} />
         ))}
