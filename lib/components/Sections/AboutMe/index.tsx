@@ -1,7 +1,12 @@
 import { HighlightedHeading } from "lib/components/Headings";
-import { AcademicCapIcon, TerminalIcon } from "@heroicons/react/outline";
+import {
+  AcademicCapIcon,
+  DocumentDownloadIcon,
+  TerminalIcon,
+} from "@heroicons/react/outline";
 import { FC, PropsWithChildren } from "react";
 import { Section } from "../Section";
+import { DownloadIcon } from "@heroicons/react/solid";
 
 const AboutMe = () => {
   // return (
@@ -18,29 +23,43 @@ const AboutMe = () => {
   // );
 
   return (
-    <Section className="flex flex-col items-center gap-y-6">
-      <h1>
-        About <span className="text-primary">Me</span>
+    <Section className="flex flex-col items-center justify-center gap-y-6">
+      <h1 className="z-50">
+        <span className="text-primary">About</span> Me
       </h1>
-      <div className="flex flex-col max-w-md gap-y-4">
-        <div className="flex flex-col md:flex-row gap-x-4 gap-y-2 bg-primary rounded-xl px-6 py-4 opacity-100 bg-gradient-to-tr from-primary to-primary-light">
-          <AcademicCapIcon className="w-12 shrink-0 text-gray-100" />
-          <ul className="w-full text-justify text-gray-100">
-            <li>Dean&#39s Scholar @ QUT</li>
-            <li>Studing software engineering + maths</li>
-            <li>ATAR 99.90</li>
-            <li>QCE Distinguised Academic Achiever</li>
-          </ul>
-        </div>
-        <div className="flex gap-x-4 bg-primary rounded-xl px-6 py-4 opacity-100 bg-gradient-to-bl from-primary-light to-primary">
+      <div className="flex flex-col w-full max-w-md gap-y-4 px-4 items-center">
+        <div className="flex gap-x-4 bg-primary rounded-xl px-6 py-4 opacity-100 dark:bg-neutral-800">
           <TerminalIcon className="w-12 shrink-0 text-gray-100" />
           <p className="w-full text-justify text-gray-100">
-            I have discovered a passion for software -- in particular, web
-            development. I now want to learn industry best practices. In the
-            future I want to run a business empowered by automation, technology,
-            and good procedures.
+            I am passionate about software, especially web development. I now
+            want to learn industry best practices. In future I want to work in
+            the start up space and create own a tech business.
           </p>
         </div>
+        <div className="flex gap-x-4 gap-y-2 bg-primary rounded-xl px-6 py-4 opacity-100 dark:bg-neutral-800">
+          <AcademicCapIcon className="w-12 shrink-0 text-gray-100" />
+          <p className="w-full text-justify text-gray-100">
+            I am studing engineering (software) and maths at QUT where I am a
+            Dean&#39;s Scholar. I graduated in 2020 with an ATAR of 99.90 and
+            was named a{" "}
+            <a
+              href="https://www.qcaa.qld.edu.au/senior/certificates-and-qualifications/qce/qce-achievement-awards/past-winners/2020/stories"
+              target="_blank"
+              rel="noreferrer"
+              className="underline text-primary"
+            >
+              QCE Distinguised Academic Achiever
+            </a>
+            .
+          </p>
+        </div>
+        <a
+          className="flex gap-x-2 bg-primary items-center w-fit px-4 py-2 rounded-lg hover:opacity-80 transition-opacity hover:cursor-pointer"
+          href="/rd_resume_public.pdf"
+          download
+        >
+          Download resume <DocumentDownloadIcon className="h-8" />
+        </a>
       </div>
     </Section>
   );
