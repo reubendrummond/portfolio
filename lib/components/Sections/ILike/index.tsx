@@ -11,11 +11,11 @@ const ILike = (props: SectionProps) => {
 
   return (
     <Section
-      className="md:pt-16 flex flex-col md:gap-y-0 items-center"
+      className="md:pt-16 flex flex-col items-center justify-center gap-y-8"
       id="ILike"
     >
       <HighlightedHeading>I like...</HighlightedHeading>
-      <div className="flex flex-col h-full gap-y-6 md:flex-row items-center w-fit justify-around md:gap-x-16 lg:gap-x-32 my-auto">
+      <div className="flex flex-col h-full gap-y-6 md:flex-row items-center w-fit justify-around md:gap-x-16 lg:gap-x-32">
         <div className="flex flex-col gap-y-4 items-center">
           <div className="flex flex-col justify-center items-center gap-y-1">
             <Typing content="software" className="font-mono text-2xl md:3xl" />

@@ -32,8 +32,8 @@ const ContactMe = () => {
 
   return (
     <Section
-      className="flex flex-col items-center pb-16 justify-around"
       id="contact"
+      className="flex flex-col items-center my-auto justify-center gap-y-8"
     >
       <HighlightedHeading>Contact</HighlightedHeading>
       <div className="flex flex-col items-center">
