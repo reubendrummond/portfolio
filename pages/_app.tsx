@@ -30,7 +30,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
         <link rel="manifest" href="favicons/site.webmanifest" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <ThemeProvider attribute="class" defaultTheme="system">
+      <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
         <ToastProvider>
           <Component {...pageProps} />
         </ToastProvider>

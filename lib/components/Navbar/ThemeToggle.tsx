@@ -1,9 +1,10 @@
 import { MoonIcon, SunIcon, ColorSwatchIcon } from "@heroicons/react/outline";
 import { useState, useEffect, useMemo } from "react";
 import { useTheme } from "next-themes";
+
 const ThemeToggle = () => {
   const LOCAL_STORAGE_KEY = "current-color-theme";
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme: theme, setTheme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
   const [nextDiv, setNextDiv] = useState<HTMLElement | null>(null);
   const colorThemes = useMemo(
@@ -68,6 +69,10 @@ const ThemeToggle = () => {
     window.localStorage.setItem(LOCAL_STORAGE_KEY, newColorTheme);
     nextDiv?.classList.add(newColorTheme);
   };
+
+  useEffect(() => {
+    console.log(theme);
+  }, [theme]);
 
   return (
     <>
