@@ -42,7 +42,6 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
     liveLink,
     githubLink,
   } = project;
-  // const cardRef = useRef<HTMLDivElement>(null);
   const [descriptionShowing, setDescriptionShowing] = useState(false);
   const toggle = () => setDescriptionShowing((d) => !d);
 
@@ -53,7 +52,7 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
         alt={mainImagePath}
         layout="fill"
         onClick={toggle}
-        className="cursor-pointer"
+        className="cursor-pointer hover:opacity-[85%]"
         loading="eager"
       />
 
