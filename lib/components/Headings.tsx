@@ -6,7 +6,7 @@ export const HighlightedHeading = ({ children }: HeadingProps) => {
   return (
     <div className="relative w-fit">
       <div
-        className="absolute w-[120%] h-[55%] bg-secondary dark:bg-secondary-dark"
+        className="absolute w-[calc(100%+2rem)] h-[55%] bg-secondary dark:bg-secondary-dark"
         style={{
           top: "50%",
           left: "50%",
