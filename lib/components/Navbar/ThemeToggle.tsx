@@ -70,10 +70,6 @@ const ThemeToggle = () => {
     nextDiv?.classList.add(newColorTheme);
   };
 
-  useEffect(() => {
-    console.log(theme);
-  }, [theme]);
-
   return (
     <>
       <button
