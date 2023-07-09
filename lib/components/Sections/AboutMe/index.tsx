@@ -31,9 +31,9 @@ const AboutMe = () => {
         <div className="flex gap-x-4 gap-y-2 bg-gray-100 rounded-xl px-6 py-4 opacity-100 dark:bg-neutral-800">
           <TerminalIcon className="w-12 shrink-0 stroke-gray-900 dark:stroke-gray-100" />
           <p className="w-full text-justify text-gray-900 dark:text-gray-100">
-            I am passionate about software, especially web development. I now
-            want to learn industry best practices. In future I want to work in
-            the start up space and create own a tech business.
+            I love software as a tool to create and solve problems. I am
+            passionate about DX and love using the tools of the modern web. I
+            want to continue to use software to bring innovative ideas to life.
           </p>
         </div>
         <div className="flex gap-x-4 gap-y-2 bg-gray-100 rounded-xl px-6 py-4 opacity-100 dark:bg-neutral-800">
