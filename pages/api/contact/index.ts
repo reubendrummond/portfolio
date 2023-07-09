@@ -7,12 +7,15 @@ import Mail from "lib/providers/SendGrid";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    if (req.method !== "POST") throw new Error("Only accepts posts");
+    if (req.method !== "POST")
+      res.status(405).json({ message: "Only POST requests accepted" });
     const formData = await validateJSON(contactFormSchema, req.body);
 
     if (process.env.NODE_ENV === "development") {
       await new Promise((res) => setTimeout(res, 3000));
-      return res.status(200).json("woo");
+      return res.status(200).json({
+        data: "Email not sent in development",
+      });
     }
 
     const resp = await Mail.send({
@@ -31,13 +34,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   } catch (err) {
     console.log(err);
     if (err instanceof ValidationError)
-      return res
-        .status(400)
-        .json({ data: "validation error", message: err.message });
-    else if (err instanceof Error)
-      return res.status(400).json({ data: "error", message: err.message });
+      return res.status(400).json({ error: err.errors, message: err.message });
+
+    return res.status(500).json({
+      data: "error",
+      message: err instanceof Error ? err.message : undefined,
+    });
   }
-  return res.status(200).json(req.body);
 };
 
 export default handler;
