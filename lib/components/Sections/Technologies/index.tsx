@@ -5,17 +5,21 @@ import Image from "next/image";
 const Technologies = () => {
   const technologies: { name: string; src: string; link?: string }[] = [
     { name: "TypeScript", src: "ts" },
-    { name: "React", src: "react" },
+    // { name: "React", src: "react" },
     { name: "NextJS", src: "next-js" },
-    { name: "TailwindCSS", src: "tailwind-css" },
-    { name: "JavaScript", src: "js" },
-    { name: "NodeJS", src: "node-js" },
+    // { name: "TailwindCSS", src: "tailwind-css" },
+    // { name: "JavaScript", src: "js" },
+    // { name: "NodeJS", src: "node-js" },
     { name: "Python", src: "python" },
     { name: "SQL", src: "postgre-sql" },
-    { name: "HTML", src: "html" },
-    { name: "Firebase", src: "firebase" },
+    // { name: "C", src: "c" },
+    { name: "C++", src: "cpp" },
+    { name: "C#", src: "csharp" },
+    { name: "Rust", src: "rust" },
+    // { name: "HTML", src: "html" },
+    // { name: "Firebase", src: "firebase" },
     { name: "Git", src: "git" },
-    { name: "GitHub", src: "github" },
+    // { name: "GitHub", src: "github" },
   ];
 
   return (
@@ -25,7 +29,7 @@ const Technologies = () => {
     >
       <HighlightedHeading>Technologies</HighlightedHeading>
       <p>My favourites and competencies</p>
-      <div className="grid grid-cols-3 md:grid-cols-4 gap-4 mt-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
         {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4"> */}
         {technologies.map(
           ({ name, src }) =>
